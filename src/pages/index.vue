@@ -27,7 +27,9 @@ const open1 = () => {
     </p>
 
     <div py-4 />
-    <el-button plain @click="open1"> Closes automatically </el-button>
+    <el-button plain @click="open1">
+      Closes automatically
+    </el-button>
 
     <input id="input" v-model="name" placeholder="What's your name?" type="text" autocomplete="false" p="x-4 y-2"
       w="250px" text="center" bg="transparent" border="~ rounded gray-200 dark:gray-700" outline="none active:none"
@@ -40,3 +42,8 @@ const open1 = () => {
     </div>
   </div>
 </template>
+
+<route lang="yaml">
+meta:
+  layout: default
+</route>
