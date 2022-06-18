@@ -7,7 +7,7 @@ import {
   Setting,
 } from '@element-plus/icons-vue'
 
-const isCollapse = ref(true)
+const isCollapse = ref(false)
 const handleOpen = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
 }
@@ -17,11 +17,9 @@ const handleClose = (key: string, keyPath: string[]) => {
 </script>
 
 <template>
-  <div>
-    <el-menu
-      default-active="2" class="el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
-      @close="handleClose"
-    >
+  <div class="min-h-100vh">
+    <el-menu default-active="2" class="h-screen el-menu-vertical-demo" :collapse="isCollapse" @open="handleOpen"
+      @close="handleClose">
       <el-sub-menu index="1">
         <template #title>
           <el-icon>
@@ -42,7 +40,9 @@ const handleClose = (key: string, keyPath: string[]) => {
         </el-menu-item-group>
         <el-menu-item-group title="Group Two">
           <el-menu-item index="1-3">
-            item three
+            <RouterLink to="/3">
+              item three
+            </RouterLink>
           </el-menu-item>
         </el-menu-item-group>
         <el-sub-menu index="1-4">
@@ -58,9 +58,9 @@ const handleClose = (key: string, keyPath: string[]) => {
         <el-icon>
           <icon-menu />
         </el-icon>
-        <template #title>
+        <router-link to="/2">
           Navigator Two
-        </template>
+        </router-link>
       </el-menu-item>
       <el-menu-item index="3" disabled>
         <el-icon>
@@ -78,7 +78,7 @@ const handleClose = (key: string, keyPath: string[]) => {
           Navigator Four
         </template>
       </el-menu-item>
-      <el-radio-group v-model="isCollapse" style="margin-bottom: 20px">
+      <el-radio-group class="bottom-0 w-full absolute" v-model="isCollapse" style="margin-bottom: 20px">
         <el-radio-button :label="false">
           expand
         </el-radio-button>
@@ -92,7 +92,7 @@ const handleClose = (key: string, keyPath: string[]) => {
 
 <style>
 .el-menu-vertical-demo:not(.el-menu--collapse) {
-    width: 200px;
-    min-height: 400px;
+  width: 200px;
+
 }
 </style>

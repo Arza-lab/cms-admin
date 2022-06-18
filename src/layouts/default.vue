@@ -1,15 +1,16 @@
 <template>
-  <el-config-provider>
-    <Header />
-    <div class="flex">
-      <Sidebar />
-      <main class=" px-4 py-10 text-center text-gray-700 dark:text-gray-200">
-        <RouterView />
-        <Footer />
-        <div class="mt-5 mx-auto text-center opacity-75 dark:opacity-50 text-sm">
-          [Default Layout]
+    <el-config-provider>
+        <Header />
+        <div class="flex">
+            <Sidebar />
+            <main
+                class="bg-gray-100 h-screen min-w-screen  text-center py-10 px-4 text-gray-700 dark:bg-cool-gray-800 dark:text-gray-200">
+                <RouterView />
+                <Footer />
+                <div class="mx-auto mt-5 text-center text-sm opacity-75 dark:opacity-50">
+                    [Default Layout]
+                </div>
+            </main>
         </div>
-      </main>
-    </div>
-  </el-config-provider>
+    </el-config-provider>
 </template>
